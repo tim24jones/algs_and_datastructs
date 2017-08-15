@@ -1,0 +1,1 @@
+It can't be linear because you have to have the first k elements sorted to be able to know what to do with the rest as they are incoming.
