@@ -36,7 +36,21 @@ class card:
         if self.s!=best_suit and other_card.s==best_suit:
             return False
         if (self.s==best_suit and other_card.s==best_suit) or (self.s!=best_suit and othercard.s!=best_suit):
-            if self.v
+            if self.v> othercard.v:
+                return True
+            elif self.v<othercard.v:
+                return False
+            elif self.v==othercard.v and self.s==othercard.s and best_suit==None:
+                if play_order.play==0:
+                    if play_order.first_play.s==self.s and play_order.first_play.s!=othercard.s:
+                        return True
+                    else:
+                        return False
+                elif play_order.play==None:
+                    if (self.s==s and other_card.s!=s) or (self.s==h and other_card.s!=(s or h)) or (self.s==d and other_card.s!=(s or h or d)) or (self.s==c and other_card.s!=(s or h or d or c):
+                        return True
+                    else:
+                        return False
 
 class Deck_of_cards:
     def __init__(self)
@@ -58,7 +72,15 @@ class Deck_of_cards:
     def deal_deck(self,players,cards,k):
         players={}
         for n in range(players):
-            players[n]=None #create players as keys of dictionary
+            players[n]=None #create players as keys of dictionary (probably a bad idea, rework with 'players' class)
             for i in range(cards*players): #loop for number of cards to be dealt as a list into dictionary value
                 players[n]=deck.pop[(cards*players)%n]
         return players[k] #show kth players hand from the dictionary
+     
+class players:
+    def __init__(self,card_list)#perhaps more parameters later
+
+class play_order:
+    def __init__(self,first_player,order,player_card_input)#perhaps more parameters later
+        self.first_play==card(first_player) #roughly speaking
+        
