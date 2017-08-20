@@ -1,0 +1,46 @@
+#altered sudoku thoughts
+class row
+    def __init__(input_string, number):
+        return list(s_board(input_string[number*10-10:number*10]))
+    self.row=row
+class column
+    def __init__(input_string, number):
+        col=[]
+        for i in range 100:
+            if i%number==0:
+                col=col+input_string[i]
+        if len(col)!=10:
+            return 'column of wrong length'
+        else:
+            return col
+    self.column=col
+class entry
+    __init__(row,column,entry):
+        value=row(input_string,row)[column]
+        self.value=value
+        self.row=row
+        self.column=column
+class set
+    __init__(list):
+    for i in range 10:
+        for j in range 10:
+        if i!=j and list[i]==list[j]:
+            return False
+for i in range 10:
+    row(input_string,i) #create the 10 rows
+    column(input_string,i) #create the 10 columns
+    if row[i]!=column(i) or column[i]!=row(i):
+        return 'Rows do not match columns'
+for i in range 10:
+    for j in range 10:
+        entry.value(i,j)=row(i)[j] #initialize entries
+        if entry.value(i,j)==None:
+            for a in range 10:
+                if set(row(i)[:i]+[a]+row(i)[i:]) and set(column(j)[:j]+a+column(j)[j:]):
+                    row_t[i]=row(i)[:i]+[a]+row(i)[i:]
+
+set(a)entry.value(i,j)=a
+                
+
+init_string
+for i in range 10:
