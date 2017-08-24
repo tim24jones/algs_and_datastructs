@@ -52,8 +52,9 @@ class card:
                     else:
                         return False
 
-class Deck_of_cards:
-    def __init__(self)
+class Dealer:
+    def __init__(self,cards_available,players,number_to_deal)
+    def full_deck(self)                                                                                                                                                    
         deck=[]
         for char in 'shdc':
             for value in [2,3,4,5,6,7,8,9,10,J,Q,K,A]:
@@ -62,25 +63,36 @@ class Deck_of_cards:
         self.deck=deck
 
     def __str__(self):
-        return deck
+        self.cards_available=cards_available
 
-    def shuffle_deck(self):
-        for i in range(1000):
-            deck.append(deck.pop(random.randint(0,len(deck))))
-        return deck
-
-    def deal_deck(self,players,cards,k):
-        players={}
-        for n in range(players):
-            players[n]=None #create players as keys of dictionary (probably a bad idea, rework with 'players' class)
-            for i in range(cards*players): #loop for number of cards to be dealt as a list into dictionary value
-                players[n]=deck.pop[(cards*players)%n]
-        return players[k] #show kth players hand from the dictionary
+    def shuffle_deck(cards_available): 
+        for i in range(1000): #good when cards_available<<1000 (most of the time). If not, increase this number
+            x=deck.append(deck.pop(random.randint(0,len(deck))))
+        self.cards_available=x
+#next section to be reworked
+#    def deal_deck(self,players,cards,k):
+#        players={}
+#        for n in range(players):
+#            players[n]=None #create players as keys of dictionary (probably a bad idea, rework with 'players' class)
+#            for i in range(cards*players): #loop for number of cards to be dealt as a list into dictionary value
+#                players[n]=deck.pop[(cards*players)%n]
+#        return players[k] #show kth players hand from the dictionary
      
-class players:
-    def __init__(self,card_list)#perhaps more parameters later
+class player:
+    def __init__(self,hand,playorder)
+        self.hand=hand
+        self.playorder=playorder
+    def playcard:
+        #remove card from hand list usually to play_area
+    def recievecard:
+        #add card to hand list, usually from dealer
+    def trickpile
+        #add cards to tricks from play_area
+    def card_pile(self,face_up_or_down,fanned_or_stacked)
+        #have a card pile to work with, depending on game
+class play_area:
+    def __init__(self,hand)
+        self.cards=hand
+    def card_pile(self,face_up_or_down,fanned_or_stacked)
+        #have a card pile to work with, depending on game
 
-class play_order:
-    def __init__(self,first_player,order,player_card_input)#perhaps more parameters later
-        self.first_play==card(first_player) #roughly speaking
-        
