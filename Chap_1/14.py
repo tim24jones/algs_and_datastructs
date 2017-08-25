@@ -6,7 +6,7 @@ class card:
         self.v=value
 
     def __str__(self):
-        return self.s,'of'readable_suit(self.v)
+        return self.s,'of',readable_suit(self.v)
 
     def readable_suit(self):
         if self.s==s:
@@ -30,7 +30,7 @@ class card:
         else:
             return 'invalid value'
 
-    def __gt__ (self,other_card,best_suit)
+    def __gt__ (self,other_card,best_suit):
         if self.s==best_suit and other_card.s!=best_suit:
             return True
         if self.s!=best_suit and other_card.s==best_suit:
@@ -47,14 +47,18 @@ class card:
                     else:
                         return False
                 elif play_order.play==None:
-                    if (self.s==s and other_card.s!=s) or (self.s==h and other_card.s!=(s or h)) or (self.s==d and other_card.s!=(s or h or d)) or (self.s==c and other_card.s!=(s or h or d or c):
+                    if (self.s==s and other_card.s!=s) or (self.s==h and other_card.s!=(s or h)) or (self.s==d and other_card.s!=(s or h or d)) or (self.s==c and other_card.s!=(s or h or d or c)):
                         return True
                     else:
                         return False
 
 class Dealer:
-    def __init__(self,cards_available,players,number_to_deal)
-    def full_deck(self)                                                                                                                                                    
+    def __init__(self,cards_available,players,number_to_deal):
+        self.players=players
+        self.cards_available=cards_available
+        self.no_to_deal=number_to_deal
+        
+    def full_deck(self):
         deck=[]
         for char in 'shdc':
             for value in [2,3,4,5,6,7,8,9,10,J,Q,K,A]:
@@ -79,20 +83,23 @@ class Dealer:
 #        return players[k] #show kth players hand from the dictionary
      
 class player:
-    def __init__(self,hand,playorder)
+    def __init__(self,hand,playorder):
         self.hand=hand
         self.playorder=playorder
-    def playcard:
+    def playcard(self,card):
+        self.hand=self.hand-card
         #remove card from hand list usually to play_area
-    def recievecard:
+    def recievecard(self,card):
+        self.hand=self.hand+card
         #add card to hand list, usually from dealer
-    def trickpile
+    def trickpile(self,cardlist):
+        self.trick=self.trick+[play_area(hand)]
         #add cards to tricks from play_area
-    def card_pile(self,face_up_or_down,fanned_or_stacked)
+    def card_pile(self,face_up_or_down,fanned_or_stacked,hand):
+        self.card_pile=hand
         #have a card pile to work with, depending on game
 class play_area:
-    def __init__(self,hand)
+    def __init__(self,hand):
         self.cards=hand
-    def card_pile(self,face_up_or_down,fanned_or_stacked)
+    def card_pile(self,face_up_or_down,fanned_or_stacked):
         #have a card pile to work with, depending on game
-
