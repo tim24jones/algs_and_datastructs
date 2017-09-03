@@ -17,7 +17,7 @@ class Stack:
      def size(self):
          return len(self.items)
 
-def read_file(filename)
+def read_file(filename):
     htmldoc=open("filename","r")
     file_str=htmldoc.read()
     tag_stack=Stack()
