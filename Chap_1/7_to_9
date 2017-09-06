@@ -1,0 +1,9 @@
+__radd__ vs __add__:
+radd calls the second of the sum instead of the first (reverse adding)
+
+__iadd__:
+iadd replaces the original value by the summed value.  Does not work well with immutable types
+
+__str__ tries to convert things into strings to be readable
+__repr__ is a representation of an object which evals back to the object
+
